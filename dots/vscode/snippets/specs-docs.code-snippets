@@ -1,0 +1,29 @@
+{
+	"Tech Specs Documentation": {
+		"scope": "markdown",
+		"prefix": "specs",
+		"body": [
+			"# Tech Spec",
+			"# Problem",
+			"$1",
+			"## Acceptance Criteria & Measurable Goals",
+			"## Out-Of-Scope",
+			"## Open Questions",
+			"## Context",
+      "### Use-cases",
+			"$2",
+      "### Assumptions",
+      "### Risk Assessment",
+			"# Solution",
+			"## Detailed Architecture",
+			"$0",
+			"## Release Plan with a Timeline",
+			"## Other",
+      "### Test Plan",
+      "### Monitoring and Alerting Plan",
+      "### Rollback Plan",
+      "### Alternate Options",
+		],
+		"description": "Create Tech Specs template"
+	}
+}

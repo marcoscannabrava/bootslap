@@ -1,0 +1,13 @@
+---
+- name: Oh My ZSH Shell Configuration
+  hosts: all
+  tags: ohmyzsh
+
+  roles:
+    - role: gantsign.oh-my-zsh
+      oh_my_zsh_theme: robbyrussell
+      oh_my_zsh_install: true
+      oh_my_zsh_update_mode: auto
+      oh_my_zsh_update_frequency: 13
+      users:
+        - username: marcos

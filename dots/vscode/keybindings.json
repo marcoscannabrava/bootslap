@@ -1,0 +1,111 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+{
+    "key": "ctrl+tab",
+    "command": "workbench.action.nextEditor"
+},
+
+{
+    "key": "ctrl+shift+tab",
+    "command": "workbench.action.previousEditor"
+},
+
+{
+    "key": "shift+alt+b",
+    "command": "HookyQR.beautify",
+    "when": "editorFocus"
+},
+{
+    "key": "ctrl+e ctrl+r",
+    "command": "erb.toggleTags"
+},
+{
+    "key": "ctrl+alt+c",
+    "command": "git.commitAll"
+},
+{
+    "key": "shift+alt+up",
+    "command": "-markdown.extension.onCopyLineUp",
+    "when": "editorTextFocus && !editorReadonly && !suggestWidgetVisible && editorLangId == 'markdown'"
+},
+{
+    "key": "shift+alt+up",
+    "command": "-notebook.cell.copyUp",
+    "when": "notebookEditorFocused && !inputFocus"
+},
+{
+    "key": "shift+alt+down",
+    "command": "-notebook.cell.copyDown",
+    "when": "notebookEditorFocused && !inputFocus"
+},
+{
+    "key": "shift+alt+down",
+    "command": "-markdown.extension.onCopyLineDown",
+    "when": "editorTextFocus && !editorReadonly && !suggestWidgetVisible && editorLangId == 'markdown'"
+},
+{
+    "key": "ctrl+shift+g g",
+    "command": "-workbench.view.scm",
+    "when": "workbench.scm.active && !gitlens:disabled && config.gitlens.keymap == 'chorded'"
+},
+{
+    "key": "ctrl+shift+g",
+    "command": "workbench.view.scm",
+    "when": "workbench.scm.active"
+},
+{
+    "key": "ctrl+shift+g",
+    "command": "-workbench.view.scm",
+    "when": "workbench.scm.active"
+},
+{
+    "key": "alt+d",
+    "command": "foam-vscode.open-daily-note",
+    "when": "config.foam.workspace == true"
+},
+{
+    "key": "alt+d",
+    "command": "-foam-vscode.open-daily-note"
+},
+{
+    "key": "alt+left",
+    "command": "workbench.files.action.collapseExplorerFolders",
+    "when": "explorerViewletFocus"
+},
+{
+    "key": "alt+left",
+    "command": "search.action.collapseSearchResults",
+    "when": "searchViewletVisible"
+},
+{
+    "key": "ctrl+shift+alt+\\",
+    "command": "editor.action.selectToBracket"
+},
+{
+    "key": "ctrl+shift+up",
+    "command": "workbench.action.terminal.resizePaneUp",
+    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+},
+{
+    "key": "ctrl+shift+down",
+    "command": "workbench.action.terminal.resizePaneDown",
+    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+},
+{
+    "key": "ctrl+shift+alt+left",
+    "command": "workbench.action.increaseViewSize"
+},
+{
+    "key": "ctrl+shift+alt+right",
+    "command": "workbench.action.decreaseViewSize"
+},
+{
+    "key": "ctrl+shift+alt+v",
+    "command": "pasteURL.PasteURL"
+},
+{
+    "key": "alt+left",
+    "command": "outline.collapse",
+    "when": "focusedView == outline"
+}
+]

@@ -1,0 +1,113 @@
+ZSH=$HOME/.oh-my-zsh
+
+# ZSH theme and plugins
+ZSH_THEME="canna"
+plugins=(
+  git
+  gitfast
+  last-working-dir
+  common-aliases
+  zsh-syntax-highlighting
+  history-substring-search
+  colored-man-pages
+  docker docker-compose
+  fzf
+)
+
+export FZF_BASE=/usr/bin/fzf
+
+# Actually load Oh-My-Zsh
+source "${ZSH}/oh-my-zsh.sh"
+unalias rm # No interactive rm by default (brought by plugins/common-aliases)
+
+# Prevent Homebrew from reporting - https://github.com/Homebrew/brew/blob/master/share/doc/homebrew/Analytics.md
+export HOMEBREW_NO_ANALYTICS=1
+
+# Rails, Ruby, NodeJs uses the local `bin` folder to store binstubs.
+export PATH="./bin:./node_modules/.bin:${PATH}:/usr/local/sbin"
+
+# Store your own aliases in the ~/.aliases file and load the here.
+[[ -f "$HOME/.aliases" ]] && source "$HOME/.aliases"
+
+# Encoding stuff for the terminal
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export BUNDLER_EDITOR="code"
+
+# Android Studio
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools
+
+# Flutter
+export PATH=$PATH:$HOME/flutter/bin
+
+# Go binaries
+export PATH=$PATH:`go env GOPATH`/bin
+
+# Autocomplete for Terraform
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/terraform terraform
+
+# Linux Bluetooth Utility
+function restart_bluetooth() {
+  sudo rmmod btusb
+  sudo modprobe -r btusb
+  sudo modprobe btusb
+  sudo systemctl restart bluetooth
+}
+
+# Resize Images - e.g. resize_image inputfile.png 300 outputdir/
+function resize_image() {
+  mogrify -path $3 -filter Triangle -define filter:support=2 -thumbnail $2 -unsharp 0.25x0.08+8.3+0.045 -dither None -posterize 136 -quality 82 -define jpeg:fancy-upsampling=off -define png:compression-filter=5 -define png:compression-level=9 -define png:compression-strategy=1 -define png:exclude-chunk=all -interlace none -colorspace sRGB $1
+}
+
+# Resize and convert Videos to mp4 - e.g. resize_video inputfile.mkv
+function resize_video() {
+  ffmpeg -i $1 -vf "scale=iw/1.2:-1" -vcodec libx265 -crf 30 "${1%.*}_resized.mp4"
+}
+
+# Resize PDFs - e.g. resize_pdf inputfile.pdf
+function resize_pdf() {
+  gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile="${1%.*}_resized.pdf" $1
+}
+
+# ------- Version Managers -------
+
+# rbenv - Ruby Version Manager
+export PATH="${HOME}/.rbenv/bin:${PATH}"
+type -a rbenv > /dev/null && eval "$(rbenv init -)"
+
+# pyenv - Python Version Manager
+export PATH="${HOME}/.pyenv/bin:${PATH}"
+if command -v pyenv 1>/dev/null 2>&1; then
+	eval "$(pyenv init --path)"
+  eval "$(pyenv init -)"
+fi
+
+# nvm - Node Version Manager
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+# Run Yarn global packages.
+export PATH="$PATH:$(yarn global bin)"
+
+###-begin-envkey-completions-###
+#
+# yargs command completion script
+#
+# Installation: /usr/local/bin/envkey completion >> ~/.zshrc
+#    or /usr/local/bin/envkey completion >> ~/.zsh_profile on OSX.
+#
+_envkey_yargs_completions()
+{
+  local reply
+  local si=$IFS
+  IFS=$'
+' reply=($(COMP_CWORD="$((CURRENT-1))" COMP_LINE="$BUFFER" COMP_POINT="$CURSOR" /usr/local/bin/envkey --get-yargs-completions "${words[@]}"))
+  IFS=$si
+  _describe 'values' reply
+}
+compdef _envkey_yargs_completions envkey
+###-end-envkey-completions-###
+

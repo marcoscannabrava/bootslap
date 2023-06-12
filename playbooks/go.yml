@@ -1,0 +1,11 @@
+---
+- name: Go Development Environment
+  hosts: all
+  tags: go
+  vars:
+    gopath: ~/src/go
+
+  tasks:
+    - name: install Go platform
+      homebrew: name=go state=present
+

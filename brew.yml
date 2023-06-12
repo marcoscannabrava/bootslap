@@ -1,0 +1,39 @@
+---
+- import_playbook: playbooks/node.yml
+- import_playbook: playbooks/rust.yml
+- import_playbook: playbooks/vscode.yml
+- import_playbook: playbooks/ohmyzsh.yml
+- import_playbook: playbooks/docker.yml
+
+- name: Applications and tools
+  hosts: all
+  tasks:
+  - name: install brewcask applications
+    tags: casks
+    homebrew_cask: state=present name={{ item }}
+    with_items:
+      # Extra web browsers
+      - google-chrome
+      - firefox
+      - dash
+      - imageoptim
+      - licecap
+      - authy
+      - transmission
+
+  - name: install homebrew tools
+    tags: brews
+    homebrew:
+      state: present
+      name:
+        - git
+        - coreutils
+        - ssh-copy-id
+        - jq
+        - gh
+        - wget
+        - gnupg
+        - nmap
+        - fzf
+        - yabai
+        - skhd

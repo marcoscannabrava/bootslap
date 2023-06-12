@@ -1,0 +1,46 @@
+---
+- name: UI Configuration
+  hosts: all
+  tags: ui
+  vars:
+    dock:
+      showhidden: true
+      tilesize: 42
+      autohide: true
+  handlers:
+    - name:    killall Dock
+      command: killall Dock
+  tasks:
+    - name: UI | Dock | dim hidden apps is {{ dock.showhidden }}
+      osx_defaults: domain=com.apple.dock
+                    key=showhidden
+                    type=bool
+                    value={{ dock.showhidden }}
+      notify: killall Dock
+
+    - name: UI | Dock | set icon size to {{ dock.icon_size }}
+      osx_defaults: domain=com.apple.dock
+                    key=tilesize
+                    type=float
+                    value={{ dock.tilesize }}
+      notify: killall Dock
+
+    - name: UI | Dock | auto-hide is {{ dock.autohide }}
+      osx_defaults: domain=com.apple.dock
+                    key=autohide
+                    type=boolean
+                    value={{ dock.autohide }}
+      notify: killall Dock
+
+    # - name: UI | Keyboard | enable full keyboard access
+    #   osx_defaults: domain=NSGlobalDomain
+    #                 key=AppleKeyboardUIMode
+    #                 type=int
+    #                 value=3
+
+    - name: UI | Trackpad | enable tap to click
+      osx_defaults: domain=com.apple.MultiTouchTrackpad
+                    key=Clicking
+                    type=boolean
+                    value=true
+

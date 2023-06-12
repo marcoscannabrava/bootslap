@@ -1,0 +1,209 @@
+{
+    // Editor & Theme Customizations
+    "editor.minimap.enabled": false,
+    "editor.suggestSelection": "first",
+    "editor.inlineSuggest.enabled": true,
+    "editor.bracketPairColorization.enabled": false,
+    "explorer.confirmDelete": true,
+    "workbench.startupEditor": "none",
+    "workbench.editor.enablePreview": false,
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "workbench.colorCustomizations": {
+        "[Default Dark+]": {
+            "statusBar.background": "#1E1E1E",
+            "statusBar.foreground": "#bbbbbb",
+            "statusBar.debuggingForeground": "#1E1E1E",
+            "sideBar.background": "#1E1E1E",
+            "sideBar.foreground": "#bbbbbb",
+            "activityBar.background": "#1E1E1E",
+            "editorGroupHeader.tabsBackground": "#1E1E1E",
+            "editorLineNumber.foreground": "#5e5e5e",
+            "tab.inactiveBackground": "#1E1E1E",
+            "tab.activeBorder": "#e58520"
+        }
+    },
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": [
+                    "entity.name.section.markdown",
+                    "punctuation.definition.heading.markdown"
+                ],
+                "settings": {
+                    "foreground": "#60b600"
+                }
+            },
+            {
+                "scope": [
+                    "string.other.link.title.markdown"
+                ],
+                "settings": {
+                    "foreground": "#008bcc"
+                }
+            },
+            {
+                "scope": [
+                    "markup.underline.link.markdown",
+                    "punctuation.definition.metadata.markdown"
+                ],
+                "settings": {
+                    "foreground": "#55462d",
+                    "fontStyle": "italic underline",
+                }
+            }
+        ]
+    },
+
+    // Language-specific settings
+    "ruby.lint": {
+        "rubocop": {
+            "except": [
+                "Layout/IndentationConsistency",
+                "Style/RedundantSelf",
+                "Style/For"
+            ]
+        }
+    },
+    "ruby.format": "rubocop",
+    "ruby.intellisense": "rubyLocate",
+    "emmet.includeLanguages": {
+        "html.erb": "html",
+        "erb": "html"
+    },
+    "emmet.excludeLanguages": [
+        "markdown"
+    ],
+    "emmet.triggerExpansionOnTab": true,
+    "emmet.showSuggestionsAsSnippets": false,
+    "eslint.format.enable": true,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features",
+        "editor.tabSize": 4
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features",
+        "editor.tabSize": 4
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.tabSize": 4
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+        "editor.tabSize": 4
+    },
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "[html]": {
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "markdown.extension.print.theme": "dark",
+    "python.languageServer": "Pylance",
+    "python.defaultInterpreterPath": "python3",
+    "python.analysis.typeCheckingMode": "basic",
+    "[python]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4
+    },
+    "jupyter.alwaysTrustNotebooks": true,
+
+    // Global Extension Settings
+    "gitlens.currentLine.enabled": false,
+    "gitlens.hovers.currentLine.over": "line",
+    "gitlens.codeLens.enabled": false,
+    "gitlens.hovers.enabled": false,
+    "gitlens.menus": {
+        "editor": {
+            "blame": false,
+            "clipboard": true,
+            "compare": true,
+            "history": false,
+            "remote": false
+        },
+        "editorGroup": false,
+        "editorTab": {
+            "clipboard": true,
+            "compare": true,
+            "history": true,
+            "remote": true
+        },
+        "explorer": {
+            "clipboard": true,
+            "compare": true,
+            "history": true,
+            "remote": true
+        },
+        "scm": {
+            "authors": true
+        },
+        "scmGroupInline": {
+            "stash": true
+        },
+        "scmGroup": {
+            "compare": true,
+            "openClose": true,
+            "stash": true
+        },
+        "scmItem": {
+            "clipboard": true,
+            "compare": true,
+            "history": true,
+            "remote": false,
+            "stash": true
+        }
+    },
+    "git.confirmSync": false,
+    "git.enableSmartCommit": true,
+    "telemetry.enableTelemetry": false,
+    "files.exclude": {
+        ".expo*": true,
+        "**/.next": true,
+        "**/bower_components": true,
+        "**/node_modules": true,
+        "**/tmp": true,
+        "**/venv": true
+    },
+    "files.watcherExclude": {
+        "**/bower_components": true,
+        "**/node_modules": true,
+        "**/tmp/**": true,
+        "**/venv/**": true
+    },
+    "search.exclude": {
+        "**/tmp": true
+    },
+    "security.workspace.trust.untrustedFiles": "newWindow",
+    "window.menuBarVisibility": "compact",
+    "liveServer.settings.donotShowInfoMsg": true,
+    "github.copilot.enable": {
+        "*": true,
+        "yaml": false,
+        "plaintext": false,
+        "markdown": false
+    },
+    "gitlens.statusBar.enabled": false,
+    "debug.allowBreakpointsEverywhere": true,
+    "rust-analyzer.inlayHints.parameterHints.enable": false,
+    "rust-analyzer.inlayHints.typeHints.enable": false,
+    "rust-analyzer.inlayHints.chainingHints.enable": false,
+    "rust-analyzer.inlayHints.closingBraceHints.enable": false,
+    "rust-analyzer.check.command": "clippy",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.fontFamily": "'Ubuntu Mono', 'monospace', monospace",
+    "react-native-tools.showUserTips": false,
+    "git.openRepositoryInParentFolders": "never",
+    "[scss]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "cmake.configureOnOpen": true,
+    "apiKey": "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",
+}
