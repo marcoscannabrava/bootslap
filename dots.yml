@@ -1,0 +1,28 @@
+---
+- name: Dotfiles
+  hosts: all
+  tags: dots
+  tasks:
+  - name: Symlink dotfiles
+    ansible.builtin.file:
+      src: '{{ item.src }}'
+      dest: '{{ item.dest }}'
+      state: link
+    loop:
+      - { src: ~/code/bootslap/dots/zshrc, dest: ~/.zshrc }
+      - { src: ~/code/bootslap/dots/vimrc, dest: ~/.vimrc }
+      - { src: ~/code/bootslap/dots/gitconfig, dest: ~/.gitconfig }
+      - { src: ~/code/bootslap/dots/aliases, dest: ~/.aliases }
+      - { src: ~/code/bootslap/dots/canna.zsh-theme, dest: ~/.oh-my-zsh/themes/canna.zsh-theme }
+      - { 
+        src: ~/code/bootslap/dots/vscode/keybindings.json,
+        dest: ~/Library/Application Support/Code/User/keybindings.json
+        }
+      - { 
+        src: ~/code/bootslap/dots/vscode/settings.json,
+        dest: ~/Library/Application Support/Code/User/settings.json
+        }
+      - { 
+        src: ~/code/bootslap/dots/vscode/snippets/specs-docs.code-snippets,
+        dest: ~/Library/Application Support/Code/User/snippets/specs-docs.code-snippets
+        }

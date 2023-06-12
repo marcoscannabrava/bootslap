@@ -20,13 +20,13 @@
       - licecap
       - authy
       - transmission
-
   - name: install homebrew tools
     tags: brews
     homebrew:
       state: present
       name:
         - git
+        - yarn
         - coreutils
         - ssh-copy-id
         - jq
@@ -35,5 +35,7 @@
         - gnupg
         - nmap
         - fzf
-        - yabai
-        - skhd
+        - koekeishiya/formulae/yabai
+        - koekeishiya/formulae/skhd
+    # - name: start skhd daemon
+    # TODO
