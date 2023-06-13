@@ -14,6 +14,9 @@
       - { src: ~/code/bootslap/dots/gitconfig, dest: ~/.gitconfig }
       - { src: ~/code/bootslap/dots/aliases, dest: ~/.aliases }
       - { src: ~/code/bootslap/dots/canna.zsh-theme, dest: ~/.oh-my-zsh/themes/canna.zsh-theme }
+      - { src: ~/code/bootslap/dots/.skhdrc, dest: ~/.skhdrc }
+      - { src: ~/code/bootslap/dots/.yabairc, dest: ~/.yabairc }
+      # VSCode
       - { 
         src: ~/code/bootslap/dots/vscode/keybindings.json,
         dest: ~/Library/Application Support/Code/User/keybindings.json

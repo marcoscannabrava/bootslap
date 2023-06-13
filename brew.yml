@@ -12,7 +12,6 @@
     tags: casks
     homebrew_cask: state=present name={{ item }}
     with_items:
-      # Extra web browsers
       - google-chrome
       - firefox
       - dash
@@ -20,6 +19,7 @@
       - licecap
       - authy
       - transmission
+      - slack
   - name: install homebrew tools
     tags: brews
     homebrew:
