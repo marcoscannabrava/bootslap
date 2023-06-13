@@ -2,7 +2,7 @@
 
 Forked https://github.com/mroth/bootslap
 
-MacOS setup to mimic my PopOS dev experience.
+MacOS setup to mimic a PopOS dev experience.
 
 # Run
 ```sh

@@ -2,38 +2,68 @@
 - name: VSCode Development Environment
   hosts: all
   tags: vscode
-  # vars:
-  #   extensions:
-  #     - EditorConfig.EditorConfig
-  #     - PeterJausovec.vscode-docker
-  #     - mikestead.dotenv
-  #     - bierner.markdown-emoji
-  #     - bierner.markdown-preview-github-styles
-  #     - esbenp.prettier-vscode
-  #     - ms-vscode.Go
-  #     - stkb.rewrap
+  vars:
+    extensions:
+      - ahmadalli.vscode-nginx-conf
+      - astro-build.astro-vscode
+      - bungcip.better-toml
+      - dbaeumer.vscode-eslint
+      - eamodio.gitlens
+      - esbenp.prettier-vscode
+      - fabiospampinato.vscode-highlight
+      - foam.foam-vscode
+      - GitHub.copilot
+      - golang.go
+      - hashicorp.terraform
+      - kortina.vscode-markdown-notes
+      - kukushi.pasteurl
+      - lanza.lldb-vscode
+      - ms-azuretools.vscode-docker
+      - ms-python.isort
+      - ms-python.python
+      - ms-python.vscode-pylance
+      - ms-toolsai.jupyter
+      - ms-toolsai.jupyter-keymap
+      - ms-toolsai.jupyter-renderers
+      - ms-toolsai.vscode-jupyter-cell-tags
+      - ms-toolsai.vscode-jupyter-slideshow
+      - ms-vscode-remote.remote-containers
+      - ms-vscode.cmake-tools
+      - ms-vscode.cpptools
+      - ms-vscode.cpptools-extension-pack
+      - ms-vscode.cpptools-themes
+      - ms-vscode.makefile-tools
+      - ms-vsliveshare.vsliveshare
+      - mushan.vscode-paste-image
+      - Prisma.prisma
+      - rust-lang.rust-analyzer
+      - tomoki1207.pdf
+      - twxs.cmake
+      - vadimcn.vscode-lldb
+      - VisualStudioExptTeam.intellicode-api-usage-examples
+      - VisualStudioExptTeam.vscodeintellicode
+      - wholroyd.jinja
+      - wingrunr21.vscode-ruby
+      - yzhang.markdown-all-in-one
 
   tasks:
     - name: install vscode
       homebrew_cask: name=visual-studio-code state=present
       check_mode: false
 
-    # Extensions are now managed via VSCode Settings Sync, no need to handle here.
-    # See https://code.visualstudio.com/docs/editor/settings-sync
+    - name: gathering existing installed extensions
+      shell: code --list-extensions
+      register: currentextraw
+      check_mode: false
+      changed_when: false
 
-    # - name: gathering existing installed extensions
-    #   shell: code --list-extensions
-    #   register: currentextraw
-    #   check_mode: false
-    #   changed_when: false
+    - set_fact:
+        missing_extensions: "{{ extensions | difference(currentextraw.stdout_lines) }}"
+        untracked_extensions: "{{ currentextraw.stdout_lines | difference(extensions) }}"
 
-    # - set_fact:
-    #     missing_extensions: "{{ extensions | difference(currentextraw.stdout_lines) }}"
-    #     untracked_extensions: "{{ currentextraw.stdout_lines | difference(extensions) }}"
+    - name: install missing extensions
+      shell: code --install-extension {{item}}
+      with_items: "{{ missing_extensions }}"
 
-    # - name: install missing extensions
-    #   shell: code --install-extension {{item}}
-    #   with_items: "{{ missing_extensions }}"
-
-    # # show us what we have installed that isn't managed here, in case we want to add it
-    # - debug: var=untracked_extensions
+    # show us what we have installed that isn't managed here, in case we want to add it
+    - debug: var=untracked_extensions

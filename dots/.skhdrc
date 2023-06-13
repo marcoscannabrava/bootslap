@@ -1,70 +1,46 @@
 # skhd config
 
 # open a terminal
-cmd + alt - t : open -a iTerm ~
+cmd + alt - t : open -a Terminal ~
 cmd + alt - l : open -a licecap
 cmd + alt - s : open -a slack
 cmd + alt - b : open -na 'Google Chrome'
 
-# kill yabai when something brakes (automatically should restart)
+# restarts yabai
 cmd + ctrl - w : killall yabai
 
 # Window Management
 # focus window
-cmd + alt - left : yabai -m window --focus west
-cmd + alt - down : yabai -m window --focus south
-cmd + alt - up : yabai -m window --focus north
-cmd + alt - right : yabai -m window --focus east
+# cmd + alt - left : yabai -m window --focus west
+# cmd + alt - down : yabai -m window --focus south
+# cmd + alt - up : yabai -m window --focus north
+# cmd + alt - right : yabai -m window --focus east
 
 # move window
-cmd + ctrl - left : yabai -m window --warp west
-cmd + ctrl - down : yabai -m window --warp south
-cmd + ctrl - up : yabai -m window --warp north
-cmd + ctrl - right : yabai -m window --warp east
+# shift + cmd - left : yabai -m window --warp west
+# shift + cmd - down : yabai -m window --warp south
+# shift + cmd - up : yabai -m window --warp north
+# shift + cmd - right : yabai -m window --warp east
 
 # increase window size
-alt + shift - a : yabai -m window --resize left:-20:0
+alt + shift - a : yabai -m window --resize right:-20:0
 alt + shift - d : yabai -m window --resize right:20:0
-alt + shift - w : yabai -m window --resize bottom:0:20
-alt + shift - s : yabai -m window --resize top:0:-20
+alt + shift - w : yabai -m window --resize bottom:0:-20
+alt + shift - s : yabai -m window --resize bottom:0:20
 
 # focus display
-ctrl + alt - left  : yabai -m display --focus prev
-ctrl + alt - right  : yabai -m display --focus next
+ctrl + shift + alt - left  : yabai -m display --focus next
+ctrl + shift + alt - right  : yabai -m display --focus prev
 
 # send window to display and follow focus
-ctrl + cmd + shift - left  : yabai -m window --display prev; yabai -m display --focus prev
-ctrl + cmd + shift - right  : yabai -m window --display next; yabai -m display --focus next
-
-# move window to space
-ctrl + cmd - p : yabai -m window --space prev; yabai -m space --focus prev
-ctrl + cmd - n : yabai -m window --space next; yabai -m space --focus next
-
-# rotate tree
-alt + cmd - r : yabai -m space --rotate 90
-
-# mirror tree y-axis
-alt + cmd - y : yabai -m space --mirror y-axis
-
-# mirror tree x-axis
-alt + cmd - x : yabai -m space --mirror x-axis
-
-# toggle window parent zoom
-alt - d : yabai -m window --toggle zoom-parent
-
-# toggle window fullscreen zoom
-cmd + shift - m : yabai -m window --toggle zoom-fullscreen
-
-# toggle window native fullscreen
-shift + alt - f : yabai -m window --toggle native-fullscreen
-
-# toggle window split type
-alt + cmd - e : yabai -m window --toggle split
-
-# float / unfloat window and center on screen
-cmd + alt - t : yabai -m window --toggle float;\
-          yabai -m window --grid 4:4:1:1:2:2
+ctrl + shift + cmd - left  : yabai -m window --display next; yabai -m display --focus next
+ctrl + shift + cmd - right : yabai -m window --display prev; yabai -m display --focus prev
 
 # change layout of desktop
-ctrl + alt - g : yabai -m space --layout bsp
-ctrl + alt - f : yabai -m space --layout float
+ctrl + shift + alt - g : yabai -m space --layout bsp
+ctrl + shift + alt - f : yabai -m space --layout float
+
+# floating windows: maximize, left pane, right pane
+ctrl + alt - up     : yabai -m window --grid 1:1:0:0:1:1
+ctrl + alt - left   : yabai -m window --grid 1:2:0:0:1:1
+ctrl + alt - right  : yabai -m window --grid 1:2:2:2:1:1

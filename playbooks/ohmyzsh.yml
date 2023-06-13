@@ -5,9 +5,19 @@
 
   roles:
     - role: gantsign.oh-my-zsh
-      oh_my_zsh_theme: robbyrussell
+      oh_my_zsh_plugins:
+        - git
+        - gitfast
+        - last-working-dir
+        - common-aliases
+        - zsh-syntax-highlighting
+        - history-substring-search
+        - colored-man-pages
+        - docker docker-compose
+        - fzf
       oh_my_zsh_install: true
       oh_my_zsh_update_mode: auto
       oh_my_zsh_update_frequency: 13
+      oh_my_zsh_write_zshrc: false
       users:
         - username: marcos
