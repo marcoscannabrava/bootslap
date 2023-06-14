@@ -27,3 +27,4 @@ ansible-playbook -K config.yml brew.yml dots.yml
   - consider base64 encryption/decryption or requiring second private repo to be downloaded
   - maybe copy from secret repo here under .gitignored folders and do a conditional symlink (if folder exists)
 - give permissions to Terminal, Yabai and SKHD
+- add SSH agent (`ssh-add`) for GitHub key
