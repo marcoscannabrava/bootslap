@@ -21,3 +21,10 @@
       oh_my_zsh_write_zshrc: false
       users:
         - username: marcos
+
+  tasks:
+    - name: instal zsh-syntax-highlighting
+    homebrew:
+      state: present
+      name:
+      - zsh-syntax-highlighting

@@ -5,28 +5,23 @@ cmd + alt - t : open -a Terminal ~
 cmd + alt - l : open -a licecap
 cmd + alt - s : open -a slack
 cmd + alt - b : open -na 'Google Chrome'
+cmd + alt - n : code ~/code/notes
 
 # restarts yabai
 cmd + ctrl - w : killall yabai
 
 # Window Management
-# focus window
-# cmd + alt - left : yabai -m window --focus west
-# cmd + alt - down : yabai -m window --focus south
-# cmd + alt - up : yabai -m window --focus north
-# cmd + alt - right : yabai -m window --focus east
-
 # move window
-# shift + cmd - left : yabai -m window --warp west
-# shift + cmd - down : yabai -m window --warp south
-# shift + cmd - up : yabai -m window --warp north
-# shift + cmd - right : yabai -m window --warp east
+ralt + shift - a : yabai -m window --move rel:-40:0
+ralt + shift - d : yabai -m window --move rel:40:0
+ralt + shift - w : yabai -m window --move rel:0:-40
+ralt + shift - s  : yabai -m window --move rel:0:40
 
-# increase window size
-alt + shift - a : yabai -m window --resize right:-20:0
-alt + shift - d : yabai -m window --resize right:20:0
-alt + shift - w : yabai -m window --resize bottom:0:-20
-alt + shift - s : yabai -m window --resize bottom:0:20
+# change window size
+lalt + shift - a : yabai -m window --resize right:-40:0
+lalt + shift - d : yabai -m window --resize right:40:0
+lalt + shift - w : yabai -m window --resize bottom:0:-40
+lalt + shift - s : yabai -m window --resize bottom:0:40
 
 # focus display
 ctrl + shift + alt - left  : yabai -m display --focus next
@@ -37,8 +32,8 @@ ctrl + shift + cmd - left  : yabai -m window --display next; yabai -m display --
 ctrl + shift + cmd - right : yabai -m window --display prev; yabai -m display --focus prev
 
 # change layout of desktop
-ctrl + shift + alt - g : yabai -m space --layout bsp
-ctrl + shift + alt - f : yabai -m space --layout float
+rcmd + ralt - g : yabai -m space --layout bsp
+rcmd + ralt - f : yabai -m space --layout float
 
 # floating windows: maximize, left pane, right pane
 ctrl + alt - up     : yabai -m window --grid 1:1:0:0:1:1
