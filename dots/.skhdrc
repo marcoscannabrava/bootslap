@@ -1,6 +1,6 @@
 # skhd config
 
-# open a terminal
+# open apps
 cmd + alt - t : open -a Terminal ~
 cmd + alt - l : open -a licecap
 cmd + alt - s : open -a slack
@@ -24,18 +24,18 @@ lalt + shift - w : yabai -m window --resize bottom:0:-40
 lalt + shift - s : yabai -m window --resize bottom:0:40
 
 # focus display
-ctrl + shift + alt - left  : yabai -m display --focus next
-ctrl + shift + alt - right  : yabai -m display --focus prev
+ctrl + shift + rcmd - left  : yabai -m display --focus next
+ctrl + shift + rcmd - right : yabai -m display --focus prev
 
 # send window to display and follow focus
-ctrl + shift + cmd - left  : yabai -m window --display next; yabai -m display --focus next
-ctrl + shift + cmd - right : yabai -m window --display prev; yabai -m display --focus prev
+ctrl + shift + lcmd - left  : yabai -m window --display next; yabai -m display --focus next
+ctrl + shift + lcmd - right : yabai -m window --display prev; yabai -m display --focus prev
 
 # change layout of desktop
 rcmd + ralt - g : yabai -m space --layout bsp
 rcmd + ralt - f : yabai -m space --layout float
 
 # floating windows: maximize, left pane, right pane
-ctrl + alt - up     : yabai -m window --grid 1:1:0:0:1:1
-ctrl + alt - left   : yabai -m window --grid 1:2:0:0:1:1
-ctrl + alt - right  : yabai -m window --grid 1:2:2:2:1:1
+ctrl + alt - up    : yabai -m window --grid 1:1:0:0:1:1
+ctrl + alt - left  : yabai -m window --grid 1:2:0:0:1:1
+ctrl + alt - right : yabai -m window --grid 1:2:2:2:1:1

@@ -49,7 +49,7 @@
     "when": "workbench.scm.active && !gitlens:disabled && config.gitlens.keymap == 'chorded'"
 },
 {
-    "key": "ctrl+shift+g",
+    "key": "shift+cmd+g",
     "command": "workbench.view.scm",
     "when": "workbench.scm.active"
 },

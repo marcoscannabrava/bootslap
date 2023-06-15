@@ -26,5 +26,14 @@ ansible-playbook -K config.yml brew.yml dots.yml
   - https://docs.ansible.com/ansible/latest/collections/ansible/builtin/fileglob_lookup.html
   - consider base64 encryption/decryption or requiring second private repo to be downloaded
   - maybe copy from secret repo here under .gitignored folders and do a conditional symlink (if folder exists)
+  - include keychain in config file (pending test)
+```sh
+Host github.com
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_ed25519
+```
 - give permissions to Terminal, Yabai and SKHD
 - add SSH agent (`ssh-add`) for GitHub key
+- remove Finder from cmd+tab (app switcher) https://apple.stackexchange.com/questions/232371/el-capitan-remove-finder-from-application-switcher-cmd-tab
+- add lockscreen shortcut to skhd
