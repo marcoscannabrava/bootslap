@@ -39,3 +39,7 @@ rcmd + ralt - f : yabai -m space --layout float
 ctrl + alt - up    : yabai -m window --grid 1:1:0:0:1:1
 ctrl + alt - left  : yabai -m window --grid 1:2:0:0:1:1
 ctrl + alt - right : yabai -m window --grid 1:2:2:2:1:1
+
+# Lock screen and shutdown
+cmd - escape          : pmset displaysleepnow
+rcmd + ctrl - escape  : shutdown -h now

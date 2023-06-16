@@ -3,18 +3,26 @@
   hosts: all
   tags: node
   vars:
-    global_modules:
-      - github-email
-      - serve
-
+    node_versions:
+      - 16.20
+  
   tasks:
-    - name: install NodeJS platform
-      homebrew: name=node state=present
-      check_mode: false
+    - name: Install nvm
+      ansible.builtin.shell: >
+        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+      args:
+        creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
 
-    - name: install NVM
-      homebrew: name=nvm state=present
+    - name: Setup .profile
+      ansible.builtin.lineinfile:
+        path: ~/.profile
+        line: source ~/.nvm/nvm.sh
+        create: yes
 
-    - name: install NodeJS global dev tools
-      npm: state=present name={{ item }} global=yes
-      with_items: "{{ global_modules }}"
+    - name: Install latest node
+      ansible.builtin.shell: |
+        source {{ ansible_env.HOME }}/.nvm/nvm.sh && nvm install {{ item }}
+      args:
+        executable: /bin/bash
+        creates: "{{ ansible_env.HOME }}/.nvm/versions/node/v{{ item }}"
+      with_items: "{{ node_versions }}"

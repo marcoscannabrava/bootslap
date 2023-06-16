@@ -24,7 +24,7 @@
 
   tasks:
     - name: instal zsh-syntax-highlighting
-    homebrew:
-      state: present
-      name:
-      - zsh-syntax-highlighting
+      homebrew:
+        state: present
+        name:
+          - zsh-syntax-highlighting
