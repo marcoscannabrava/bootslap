@@ -34,7 +34,7 @@
         - gh
         - wget
         - gnupg
-        - nmap
+        - postgresql@14
         - fzf
         - koekeishiya/formulae/yabai
         - koekeishiya/formulae/skhd
