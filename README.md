@@ -18,6 +18,8 @@ ansible-playbook -K config.yml brew.yml dots.yml
 - merge with PopOS dotfiles – clean up old dotfiles and update dotfiles repo to this
 ## P1
 - OS Settings
+  - enable keyboard navigation
+  - enable slack and chrome notifications
   - Dock settings: make it hidden and to the left by default
     - https://docs.ansible.com/ansible/latest/collections/community/general/osx_defaults_module.html
   - Appearance settings: highest resolution

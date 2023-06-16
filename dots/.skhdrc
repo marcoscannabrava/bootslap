@@ -7,10 +7,15 @@ cmd + alt - s : open -a slack
 cmd + alt - b : open -na 'Google Chrome'
 cmd + alt - n : code ~/code/notes
 
+cmd + alt - 1 : open -a Terminal ~ && \
+open -a slack && \
+open -na 'Google Chrome'&& \
+code ~/code/notes
+
 # restarts yabai
 cmd + ctrl - w : killall yabai
 
-# Window Management
+# --- Window Management ---
 # move window
 ralt + shift - a : yabai -m window --move rel:-40:0
 ralt + shift - d : yabai -m window --move rel:40:0
@@ -31,14 +36,20 @@ ctrl + shift + rcmd - right : yabai -m display --focus prev
 ctrl + shift + lcmd - left  : yabai -m window --display next; yabai -m display --focus next
 ctrl + shift + lcmd - right : yabai -m window --display prev; yabai -m display --focus prev
 
-# change layout of desktop
+# toggle float/grid
 rcmd + ralt - g : yabai -m space --layout bsp
 rcmd + ralt - f : yabai -m space --layout float
+
+# TODO: unmanage currently focused window i.e. remove from grid
+# use yabai -m rule --list | jq -c '.[] | select(.app | contains("System Settings <app_name>"))' 
+# rcmd + ralt + shift - f : yabai -m rule --add app=`yabai -m query --windows --window | jq '.app'` manage=off
 
 # floating windows: maximize, left pane, right pane
 ctrl + alt - up    : yabai -m window --grid 1:1:0:0:1:1
 ctrl + alt - left  : yabai -m window --grid 1:2:0:0:1:1
 ctrl + alt - right : yabai -m window --grid 1:2:2:2:1:1
+
+# --- Window Management (END) ---
 
 # Lock screen and shutdown
 cmd - escape          : pmset displaysleepnow

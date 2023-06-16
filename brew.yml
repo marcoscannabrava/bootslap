@@ -20,6 +20,7 @@
       - authy
       - transmission
       - slack
+      - dbeaver-community
   - name: install homebrew tools
     tags: brews
     homebrew:

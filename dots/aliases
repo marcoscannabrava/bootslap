@@ -27,6 +27,10 @@ alias duf='du -sh * | sort -hr'
 # Hone aliases
 alias honehq='source ~/code/hone/hone-dev/dev.sh && cd ~/code/hone/hone-dev/backstage'
 
+# LightningAI aliases
+alias litai='~/litai/dev'
+alias cdlit='cd ~/go/src/github.com/gridai/grid'
+
 #########################################################################################
 #                                                                                       #
 #               ------- Useful Docker Aliases --------                                  #
