@@ -21,6 +21,7 @@
       - transmission
       - slack
       - dbeaver-community
+      - discord
   - name: install homebrew tools
     tags: brews
     homebrew:
