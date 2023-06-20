@@ -41,3 +41,4 @@ Host github.com
 - give permissions to Terminal, Yabai and SKHD
 - add SSH agent (`ssh-add`) for GitHub key
 - remove Finder from cmd+tab (app switcher) https://apple.stackexchange.com/questions/232371/el-capitan-remove-finder-from-application-switcher-cmd-tab
+- research macos resource manager app (memory/cpu usage analyzer)
