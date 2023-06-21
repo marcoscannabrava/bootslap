@@ -36,18 +36,30 @@ ctrl + shift + rcmd - right : yabai -m display --focus prev
 ctrl + shift + lcmd - left  : yabai -m window --display next; yabai -m display --focus next
 ctrl + shift + lcmd - right : yabai -m window --display prev; yabai -m display --focus prev
 
-# toggle float/grid
-rcmd + ralt - g : yabai -m space --layout bsp
-rcmd + ralt - f : yabai -m space --layout float
+# toggle space float/grid
+rcmd + ralt - g : if [ "$(yabai -m query --spaces --space | jq '.type')" = "\"float\"" ]; \
+then yabai -m space --layout bsp; \
+else yabai -m space --layout float; fi
+
+# (un)float specific window
+rcmd + ralt - f : yabai -m window --toggle float
 
 # TODO: unmanage currently focused window i.e. remove from grid
 # use yabai -m rule --list | jq -c '.[] | select(.app | contains("System Settings <app_name>"))' 
 # rcmd + ralt + shift - f : yabai -m rule --add app=`yabai -m query --windows --window | jq '.app'` manage=off
 
-# floating windows: maximize, left pane, right pane
-ctrl + alt - up    : yabai -m window --grid 1:1:0:0:1:1
-ctrl + alt - left  : yabai -m window --grid 1:2:0:0:1:1
-ctrl + alt - right : yabai -m window --grid 1:2:2:2:1:1
+# floating windows: maximize, move to left/right pane
+ctrl + alt - up : if [ $(yabai -m query --windows --window | jq '.frame.w') -le $(($(yabai -m query --displays --display | jq '.frame.w')/2)) ]; \
+then yabai -m window --grid 10:10:1:1:6:6; \
+else yabai -m window --grid 1:1:0:0:1:1; fi
+# grid windows: swap with previous or next
+ctrl + alt - left  : if [ "$(yabai -m query --windows --window | jq '."is-floating"')" = "true" ] || [ "$(yabai -m query --spaces --space | jq '.type')" = "\"float\"" ]; \
+then yabai -m window --grid 1:2:0:0:1:1; \
+else yabai -m window --swap prev; fi
+ctrl + alt - right : if [ "$(yabai -m query --windows --window | jq '."is-floating"')" = "true" ] || [ "$(yabai -m query --spaces --space | jq '.type')" = "\"float\"" ]; \
+then yabai -m window --grid 1:2:2:2:1:1; \
+else yabai -m window --swap next; fi
+
 
 # --- Window Management (END) ---
 

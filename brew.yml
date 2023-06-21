@@ -22,7 +22,6 @@
       - slack
       - dbeaver-community
       - discord
-      - miniconda
   - name: install homebrew tools
     tags: brews
     homebrew:
