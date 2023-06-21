@@ -42,3 +42,5 @@ Host github.com
 - add SSH agent (`ssh-add`) for GitHub key
 - remove Finder from cmd+tab (app switcher) https://apple.stackexchange.com/questions/232371/el-capitan-remove-finder-from-application-switcher-cmd-tab
 - research macos resource manager app (memory/cpu usage analyzer)
+- skhd: yabai shortcut to "restore" window (set not-maximized size)
+  - is it possible to have the same shortcut change window size if the window is already where it should be? e.g. ctrl+alt-arrows twice
