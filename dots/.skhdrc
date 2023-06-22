@@ -40,13 +40,8 @@ ctrl + shift + lcmd - right : yabai -m window --display prev; yabai -m display -
 rcmd + ralt - g : if [ "$(yabai -m query --spaces --space | jq '.type')" = "\"float\"" ]; \
 then yabai -m space --layout bsp; \
 else yabai -m space --layout float; fi
-
 # (un)float specific window
 rcmd + ralt - f : yabai -m window --toggle float
-
-# TODO: unmanage currently focused window i.e. remove from grid
-# use yabai -m rule --list | jq -c '.[] | select(.app | contains("System Settings <app_name>"))' 
-# rcmd + ralt + shift - f : yabai -m rule --add app=`yabai -m query --windows --window | jq '.app'` manage=off
 
 # floating windows: maximize, move to left/right pane
 ctrl + alt - up : if [ $(yabai -m query --windows --window | jq '.frame.w') -le $(($(yabai -m query --displays --display | jq '.frame.w')/2)) ]; \

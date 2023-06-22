@@ -25,7 +25,8 @@ ansible-playbook -K config.yml brew.yml dots.yml
   - Appearance settings: highest resolution
   - fn keys
   - tap to click
-  - shortcut to zoom window
+  - accessibility / display: reduce transparency
+  - no window tinting
 - start skhd daemon after brew.yml
 - add ssh keys and other secret configs (aws, github) setup
   - https://docs.ansible.com/ansible/latest/collections/ansible/builtin/fileglob_lookup.html
@@ -41,6 +42,3 @@ Host github.com
 - give permissions to Terminal, Yabai and SKHD
 - add SSH agent (`ssh-add`) for GitHub key
 - remove Finder from cmd+tab (app switcher) https://apple.stackexchange.com/questions/232371/el-capitan-remove-finder-from-application-switcher-cmd-tab
-- research macos resource manager app (memory/cpu usage analyzer)
-- skhd: yabai shortcut to "restore" window (set not-maximized size)
-  - is it possible to have the same shortcut change window size if the window is already where it should be? e.g. ctrl+alt-arrows twice
