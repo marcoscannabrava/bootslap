@@ -29,8 +29,8 @@ lalt + shift - w : yabai -m window --resize bottom:0:-40
 lalt + shift - s : yabai -m window --resize bottom:0:40
 
 # focus display
-ctrl + shift + rcmd - left  : yabai -m display --focus next
-ctrl + shift + rcmd - right : yabai -m display --focus prev
+alt + shift + lcmd - left  : yabai -m display --focus next
+alt + shift + lcmd - right : yabai -m display --focus prev
 
 # send window to display and follow focus
 ctrl + shift + lcmd - left  : yabai -m window --display next; yabai -m display --focus next

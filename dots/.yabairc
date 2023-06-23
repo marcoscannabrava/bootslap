@@ -17,6 +17,4 @@ yabai -m config active_window_border_color   0xffff8800
 # float apps
 yabai -m rule --add app="^System Settings$"     manage=off
 yabai -m rule --add app="^Notes$"               manage=off
-yabai -m rule --add app="^Clock$"               manage=off
-yabai -m rule --add app="^Slack$"               manage=off
 yabai -m rule --add app="^Activity Monitor$"    manage=off
