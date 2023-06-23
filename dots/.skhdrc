@@ -54,7 +54,11 @@ else yabai -m window --swap prev; fi
 ctrl + alt - right : if [ "$(yabai -m query --windows --window | jq '."is-floating"')" = "true" ] || [ "$(yabai -m query --spaces --space | jq '.type')" = "\"float\"" ]; \
 then yabai -m window --grid 1:2:2:2:1:1; \
 else yabai -m window --swap next; fi
-
+# warp windows in grid
+cmd + ctrl + alt - up     : yabai -m window --warp north
+cmd + ctrl + alt - left   : yabai -m window --warp west
+cmd + ctrl + alt - right  : yabai -m window --warp east
+cmd + ctrl + alt - down   : yabai -m window --warp south
 
 # --- Window Management (END) ---
 
