@@ -14,6 +14,7 @@ ansible-playbook -K config.yml brew.yml dots.yml
 
 # TODO
 ## P0
+- litai alias w/o args: if containers are already running, just open vscode
 - set up tmux
 - merge with PopOS dotfiles – clean up old dotfiles and update dotfiles repo to this
 ## P1

@@ -1,13 +1,13 @@
 # skhd config
 
 # open apps
-cmd + alt - t : open -a Terminal ~
-cmd + alt - l : open -a licecap
-cmd + alt - s : open -a slack
-cmd + alt - b : open -na 'Google Chrome'
-cmd + alt - n : code ~/code/notes
+rcmd + ralt - t : open -a Terminal ~
+rcmd + ralt - l : open -a licecap
+rcmd + ralt - s : open -a slack
+rcmd + ralt - b : open -na 'Google Chrome'
+rcmd + ralt - n : code ~/code/notes
 
-cmd + alt - 1 : open -a Terminal ~ && \
+rcmd + ralt - 1 : open -a Terminal ~ && \
 open -a slack && \
 open -na 'Google Chrome'&& \
 code ~/code/notes

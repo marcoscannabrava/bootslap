@@ -44,19 +44,12 @@
     "when": "editorTextFocus && !editorReadonly && !suggestWidgetVisible && editorLangId == 'markdown'"
 },
 {
-    "key": "ctrl+shift+g g",
-    "command": "-workbench.view.scm",
-    "when": "workbench.scm.active && !gitlens:disabled && config.gitlens.keymap == 'chorded'"
-},
-{
-    "key": "shift+cmd+g",
-    "command": "workbench.view.scm",
-    "when": "workbench.scm.active"
+    "key": "cmd+shift+g",
+    "command": "workbench.view.extension.gitlensInspect",
 },
 {
     "key": "ctrl+shift+g",
-    "command": "-workbench.view.scm",
-    "when": "workbench.scm.active"
+    "command": "workbench.view.extension.gitlensInspect",
 },
 {
     "key": "alt+d",
