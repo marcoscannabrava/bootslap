@@ -108,5 +108,9 @@
 {
     "key": "shift+cmd+z",
     "command": "-redo"
-}
+},
+{
+    "key": "cmd+g",
+    "command": "workbench.action.gotoLine"
+},
 ]
