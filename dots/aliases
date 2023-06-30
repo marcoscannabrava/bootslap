@@ -28,7 +28,7 @@ alias duf='du -sh * | sort -hr'
 alias honehq='source ~/code/hone/hone-dev/dev.sh && cd ~/code/hone/hone-dev/backstage'
 
 # LightningAI aliases
-alias litai='~/litai/dev'
+alias litai='source ~/litai/dev'
 alias cdlit='cd ~/go/src/github.com/gridai/grid'
 
 #########################################################################################
