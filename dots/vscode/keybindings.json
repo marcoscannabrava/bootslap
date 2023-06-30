@@ -113,4 +113,9 @@
     "key": "cmd+g",
     "command": "workbench.action.gotoLine"
 },
+{
+    "key": "cmd+m",
+    "command": "-markdown.extension.editing.toggleMath",
+    "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
+},
 ]

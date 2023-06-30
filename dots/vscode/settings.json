@@ -271,4 +271,5 @@
     },
     "editor.fontSize": 13,
     "go.toolsManagement.autoUpdate": true,
+    "go.lintTool": "golangci-lint",
 }
