@@ -29,6 +29,7 @@
       state: present
       name:
         - git
+        - git-lfs
         - yarn
         - coreutils
         - ssh-copy-id
