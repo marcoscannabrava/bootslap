@@ -18,6 +18,7 @@ ansible-playbook -K config.yml brew.yml dots.yml
 - set up tmux
 - merge with PopOS dotfiles – clean up old dotfiles and update dotfiles repo to this
 ## P1
+- multi dev setup: how to solve different instances of postgresql?
 - OS Settings
   - enable keyboard navigation
   - enable slack and chrome notifications

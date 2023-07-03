@@ -29,7 +29,6 @@ alias honehq='source ~/code/hone/hone-dev/dev.sh && cd ~/code/hone/hone-dev/back
 
 # LightningAI aliases
 alias litai='source ~/litai/dev'
-alias cdlit='cd ~/go/src/github.com/gridai/grid'
 
 #########################################################################################
 #                                                                                       #
@@ -172,3 +171,5 @@ ex ()
     echo "'$1' is not a valid file"
   fi
 }
+
+alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
