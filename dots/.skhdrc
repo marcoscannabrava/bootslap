@@ -63,5 +63,5 @@ cmd + ctrl + alt - down   : yabai -m window --warp south
 # --- Window Management (END) ---
 
 # Lock screen and shutdown
-cmd - escape          : pmset displaysleepnow
+cmd + shift - escape  : pmset displaysleepnow
 rcmd + ctrl - escape  : shutdown -h now
