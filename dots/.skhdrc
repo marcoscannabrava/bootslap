@@ -7,10 +7,15 @@ rcmd + ralt - s : open -a slack
 rcmd + ralt - b : open -na 'Google Chrome'
 rcmd + ralt - n : code ~/code/notes
 
+# Space 1
 rcmd + ralt - 1 : open -a Terminal ~ && \
 open -a slack && \
 open -na 'Google Chrome'&& \
 code ~/code/notes
+
+# Space 2
+rcmd + ralt - 2 : open -a Terminal ~ && \
+open -a Firefox
 
 # restarts yabai
 cmd + ctrl - w : killall yabai

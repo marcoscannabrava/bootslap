@@ -56,19 +56,7 @@
             }
         ]
     },
-
     // Language-specific settings
-    "ruby.lint": {
-        "rubocop": {
-            "except": [
-                "Layout/IndentationConsistency",
-                "Style/RedundantSelf",
-                "Style/For"
-            ]
-        }
-    },
-    "ruby.format": "rubocop",
-    "ruby.intellisense": "rubyLocate",
     "emmet.includeLanguages": {
         "html.erb": "html",
         "erb": "html"
@@ -115,7 +103,6 @@
         "editor.tabSize": 4
     },
     "jupyter.alwaysTrustNotebooks": true,
-
     // Global Extension Settings
     "gitlens.currentLine.enabled": false,
     "gitlens.hovers.currentLine.over": "line",
@@ -269,7 +256,11 @@
             ]
         }
     },
-    "editor.fontSize": 13,
     "go.toolsManagement.autoUpdate": true,
     "go.lintTool": "golangci-lint",
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true,
+        "source.fixAll.tslint": true,
+        "source.fixAll.stylelint": true
+      }
 }
