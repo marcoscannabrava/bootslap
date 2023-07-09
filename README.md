@@ -16,6 +16,10 @@ ansible-playbook -K config.yml brew.yml dots.yml
 ## P0
 - litai alias w/o args: if containers are already running, just open vscode
 - set up tmux
+  - check primeagen's conf
+  - better shortcuts for pane splitting
+  - avoid too many sessions
+  - simplify `tat` attach command
 - merge with PopOS dotfiles – clean up old dotfiles and update dotfiles repo to this
 ## P1
 - multi dev setup: how to solve different instances of postgresql?

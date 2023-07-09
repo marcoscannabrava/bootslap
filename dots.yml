@@ -11,6 +11,7 @@
     loop:
       - { src: ~/code/bootslap/dots/zshrc, dest: ~/.zshrc }
       - { src: ~/code/bootslap/dots/vimrc, dest: ~/.vimrc }
+      - { src: ~/code/bootslap/dots/tmux.conf, dest: ~/.tmux.conf }
       - { src: ~/code/bootslap/dots/gitconfig, dest: ~/.gitconfig }
       - { src: ~/code/bootslap/dots/aliases, dest: ~/.aliases }
       - { src: ~/code/bootslap/dots/canna.zsh-theme, dest: ~/.oh-my-zsh/themes/canna.zsh-theme }

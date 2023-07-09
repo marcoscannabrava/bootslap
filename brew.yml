@@ -28,6 +28,7 @@
     homebrew:
       state: present
       name:
+        - tmux
         - git
         - git-lfs
         - yarn
