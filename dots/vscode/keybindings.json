@@ -63,7 +63,7 @@
 {
     "key": "alt+left",
     "command": "workbench.files.action.collapseExplorerFolders",
-    "when": "explorerViewletFocus"
+    "when": "explorerViewletFocus && !editorTextFocus"
 },
 {
     "key": "alt+left",
