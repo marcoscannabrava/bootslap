@@ -23,6 +23,7 @@
       - dbeaver-community
       - discord
       - zoom
+      - ngrok
   - name: install homebrew tools
     tags: brews
     homebrew:
