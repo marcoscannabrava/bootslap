@@ -23,6 +23,10 @@ alias c='cd ~/code'
 # override common-aliases plugin duf alias: list all file sorted by size
 alias duf='du -sh * | sort -hr'
 
+# commit current branch
+gcommit() {
+    g c "$(current_branch | sed 's,mc/,,' | sed -E 's,(.*)/(.*)/,\1: \2 / ,g' | sed -e 's,_, ,g')"
+}
 
 # Hone aliases
 alias honehq='source ~/code/hone/hone-dev/dev.sh && cd ~/code/hone/hone-dev/backstage'

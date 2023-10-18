@@ -263,5 +263,16 @@
         "source.fixAll.tslint": true,
         "source.fixAll.stylelint": true
     },
-    "githubPullRequests.pullBranch": "never"
+    "githubPullRequests.pullBranch": "never",
+    "go.coverageDecorator": {
+        "type": "gutter"
+    },
+    "go.coverageOptions": "showUncoveredCodeOnly",
+    "go.testEnvVars": {
+        "DATABASE_URL": "postgres://grid:grid@localhost:5432/grid?sslmode=disable",
+        "GRID_URL": "http://localhost:9800"
+    },
+    "go.testFlags": [
+        // "-v"
+    ],
 }
