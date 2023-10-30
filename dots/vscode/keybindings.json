@@ -68,7 +68,7 @@
 {
     "key": "alt+left",
     "command": "search.action.collapseSearchResults",
-    "when": "searchViewletVisible"
+    "when": "searchViewletVisible && !editorTextFocus"
 },
 {
     "key": "ctrl+shift+alt+\\",
@@ -142,5 +142,5 @@
     "key": "shift+alt+f",
     "command": "-editor.action.formatDocument.none",
     "when": "editorTextFocus && !editorHasDocumentFormattingProvider && !editorReadonly"
-},
+}
 ]
