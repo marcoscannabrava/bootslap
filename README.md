@@ -4,24 +4,31 @@ Forked https://github.com/mroth/bootslap
 
 MacOS setup to mimic a PopOS dev experience.
 
+## pre reqs
+```sh
+# set up ssh key
+eval "$(ssh-agent -s)" # check agent is running
+chmod 600 ~/.ssh/<key> # make key only read-writeable by current user
+ssh-add ~/.ssh/<key>   # add private key
+# clone this and other relevant repos
+# run commands below
+```
+
 # Run
 ```sh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew install ansible
 ansible-playbook -K config.yml brew.yml dots.yml
+```
+```
 # config.yml configures MacOS preferences
 # brew.yml installs Homebrew formulas and casks
 # dots.yml symlinks dotfiles and custom settings
 ```
 
 # TODO
-## P0
-- litai alias w/o args: if containers are already running, just open vscode
-- set up tmux
-  - check primeagen's conf
-  - better shortcuts for pane splitting
-  - avoid too many sessions
-  - simplify `tat` attach command
-- merge with PopOS dotfiles – clean up old dotfiles and update dotfiles repo to this
-## P1
+- merge with PopOS dotfiles
 - multi dev setup: how to solve different instances of postgresql?
 - OS Settings
   - enable keyboard navigation
